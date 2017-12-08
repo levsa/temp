@@ -2,15 +2,15 @@ def utilfile
 def util
 
 node {
-    utilfile = load 'util.groovy'
-    util = utilfile.utilities(this)
-
     timestamps {
         properties([buildDiscarder(logRotator(daysToKeepStr: '150'))])
 
         stage('Checkout Code') {
             checkout scm
         }
+
+        utilfile = load 'util.groovy'
+        util = utilfile.utilities(this)
 
         def profilerImage
         def profilerWebImage
