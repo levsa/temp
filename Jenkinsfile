@@ -29,14 +29,6 @@ node {
 }
 
 def getDockerTagName(building = false) {
-    if (env.BRANCH_NAME == 'master') {
-        if (building) {
-            return "snapshot.${env.BUILD_NUMBER}"
-        } else {
-            return 'snapshot'
-        }
-    } else {
-        return "snapshot-${env.BRANCH_NAME.replaceAll(/[^a-zA-Z0-9.-]+/, '_')}"
-    }
+    return "snapshot-PC-1240"
 }
 
