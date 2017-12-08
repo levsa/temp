@@ -25,6 +25,10 @@ node {
         def dependenciesDockerfileHash = util.hash(dependenciesDockerfile)
         def profilerDockerfileHash = util.hash(profilerDockerfile)
         def webDockerfileHash = util.hash(webDockerfile)
+
+        sh "echo ${dependenciesDockerfileHash}"
+        sh "echo ${profilerDockerfileHash}"
+        sh "echo ${webDockerfileHash}"
     }
 }
 

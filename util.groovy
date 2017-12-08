@@ -1,8 +1,9 @@
 class Utilities implements Serializable {
         def steps
         Utilities(steps) { this.steps = steps }
-        def hash(args) {
-                steps.sh "echo YES ${args}"
+
+        def hash(filename) {
+            steps.sh(returnStdout: true, script: 'md5sum ${filename}').trim().substring(0, 32)
         }
 }
 
