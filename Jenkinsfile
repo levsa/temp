@@ -3,7 +3,7 @@ def util
 
 node {
     utilfile = load 'util.groovy'
-    util = new utilfile.Utilities(this)
+    util = utilfile.utilities(this)
 
     timestamps {
         properties([buildDiscarder(logRotator(daysToKeepStr: '150'))])
