@@ -3,7 +3,7 @@ class Utilities implements Serializable {
         Utilities(steps) { this.steps = steps }
 
         def hash(filename) {
-            steps.sh(returnStdout: true, script: 'md5sum ${filename}').trim().substring(0, 32)
+            steps.sh(returnStdout: true, script: "md5sum ${filename}").trim().substring(0, 32)
         }
 }
 
